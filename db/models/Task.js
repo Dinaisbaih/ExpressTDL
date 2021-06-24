@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     deadLineDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
     },
   });
 };

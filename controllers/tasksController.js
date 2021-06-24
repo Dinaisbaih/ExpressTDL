@@ -2,6 +2,7 @@ const { Task } = require("../db/models");
 
 exports.createTask = async (req, res, next) => {
   try {
+    console.log(req.body);
     const newTask = await Task.create(req.body);
     res.status(201).json(newTask);
   } catch (error) {
@@ -39,7 +40,7 @@ exports.getTasks = async (req, res) => {
 exports.updateTasks = async (req, res, next) => {
   try {
     await req.task.update(req.body);
-    res.status(204).end();
+    res.json(req.task);
   } catch (err) {
     next(err);
   }
